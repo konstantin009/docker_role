@@ -25,10 +25,6 @@
     name: docker-ce
     state: present
 
-- name: Start docker service
-  systemd:
-    state: started
-
 - name: Install pip
   easy_install:
     name: pip
@@ -37,6 +33,12 @@
 - name: Install docker python module
   pip:
     name: docker
+    
+- name: Start docker service
+  systemd:
+    name: docker
+    state: started
+    enabled: yes    
 
 - name: Create a network
   docker_network:
