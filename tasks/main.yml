@@ -26,7 +26,7 @@
     state: latest
 
 - name: Start docker service
-  systemd: service mysql start
+  systemd:
     state: started
     enabled: yes
 
