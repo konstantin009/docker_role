@@ -26,9 +26,10 @@
     state: latest
 
 - name: Start docker service
-  service:
-    name: docker
+  systemd: service mysql start
     state: started
+    enabled: yes
+
     
 - name: Install pip
   easy_install:
