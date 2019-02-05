@@ -28,12 +28,12 @@
 - name: Install epel-release
   yum:
     name: epel-release
-    state: latest
+    state: present
     
 - name: Install pip
   yum:
     name: python-pip
-    state: latest    
+    state: present    
 
 - name: Install docker python module
   pip:
