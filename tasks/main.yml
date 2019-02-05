@@ -25,10 +25,15 @@
     name: docker-ce
     state: present
 
-- name: Install pip
-  easy_install:
-    name: pip
+- name: Install epel-release
+  yum:
+    name: epel-release
     state: latest
+    
+- name: Install pip
+  yum:
+    name: python-pip
+    state: latest    
 
 - name: Install docker python module
   pip:
