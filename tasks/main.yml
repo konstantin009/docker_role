@@ -29,6 +29,11 @@
   service:
     name: docker
     state: started
+    
+- name: Install EPEL repo
+  yum:
+    name: epel-release
+    state: present   
 
 - name: Install python-pip
   yum:
