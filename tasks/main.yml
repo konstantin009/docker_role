@@ -23,22 +23,17 @@
 - name: Install docker-ce
   yum:
     name: docker-ce
-    state: present
+    state: latest
 
-- name: Start and enable docker service
+- name: Start docker service
   service:
     name: docker
     state: started
     
-- name: Install EPEL repo
-  yum:
-    name: epel-release
-    state: present   
-
-- name: Install python-pip
-  yum:
-    name: python-pip
-    state: present
+- name: Install pip
+  easy_install:
+    name: pip
+    state: latest
 
 - name: Install docker python module
   pip:
